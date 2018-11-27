@@ -30,15 +30,18 @@ public class SplashScreenSample {
         frame.setSize(800, 600);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         //init the JWindow, add component to its content pane
-        JWindow window=null;
+        JWindow window=new JWindow();
         ImageIcon icon=new ImageIcon(new URL("https://i.ytimg.com/vi/ND6a4V-xdjI/hqdefault.jpg"));
-        
+        window.setLayout(new BorderLayout());
+        window.getContentPane().add(new JLabel(icon));
+        window.setSize(500, 500);
+        window.setLocationRelativeTo(null);
         //////////////////////////////////////////////////////
         
         Thread t=new Thread(){
             public void run(){
                 try {
-                    Thread.sleep(2000);
+                    Thread.sleep(3000);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(SplashScreenSample.class.getName()).log(Level.SEVERE, null, ex);
                 }
